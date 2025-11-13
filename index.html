@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Fox 2E Studio 公益通知ページ</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding-top: 100px; background: #fafafa; }
+    h1 { font-size: 2em; color: #333; }
+    p { color: #666; }
+  </style>
+</head>
+<body>
+  <h1>🐾 Hello Neko World!</h1>
+<p>We've got to "Point of No Return".</p>
+  <p>“In medicine, nothing is more important than the life of the patient.
+All medical practice and innovation must be designed upon this principle.”<br>
+IPアドレスは下記です！
+
+
+</p>
+<div id="my-ip">IP を取得中…</div>
+<script>
+  fetch('https://api.ipify.org?format=json')
+    .then(r => r.json())
+    .then(data => {
+      document.getElementById('my-ip').textContent = 'あなたのIP: ' + (data.ip || '不明');
+    })
+    .catch(err => {
+      console.error(err);
+      document.getElementById('my-ip').textContent = 'IP を取得できませんでした';
+    });
+</script>
+<p style="margin-top:40px; font-size:0.9em; color:#999;">
+※本ページではアクセスログ（IP・日時・User-Agent）を保全目的で記録します。
+</p>
+<p style="margin-top:40px; font-size:0.9em; color:#999;">
+※本ページに記載された内容は記録保全のための公式通知文書です。
+</p>
+</body>
+</html>
